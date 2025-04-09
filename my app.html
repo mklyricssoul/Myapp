@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.K Lyrics Soul</title>
+    <style>
+        body {
+            background-image: url('images/m.k.wallpaper-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: brightness(0.9); /* reduced brightness */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .view-container {
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            color: #ff007f;
+            font-family: 'Butterfly', cursive;
+            margin: 5px 0;
+        }
+
+        .menu-container {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+            width: 180px;
+            z-index: 10;
+            padding: 5px 0;
+        }
+
+        .menu-dropdown a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 15px;
+            font-weight: 500;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .menu-dropdown a:hover {
+            background-color: rgb(251, 221, 70);
+        }
+
+        .container {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 16px;
+            color: rgb(228, 10, 181);
+        }
+
+        input {
+            width: 180px;
+            padding: 5px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: rgb(40, 79, 223);
+            color: white;
+            padding: 6px 12px;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .insta-link {
+            margin-top: 15px;
+        }
+
+        .insta-link a {
+            color: #ee0008;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .admin-title {
+            color: yellow;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .admin-section {
+            display: none;
+            font-size: 12px;
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            text-align: left;
+            width: 250px;
+            position: absolute;
+            top: 140px;
+            left: 10px;
+        }
+
+        .admin-section p {
+            margin: 5px 0;
+        }
+
+        .admin-section a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .view-container .admin-title {
+            margin-top: 60px;
+            font-size: 13px;
+        }
+
+        .view-button {
+            background-color: rgb(235, 37, 225);
+            color: white;
+            padding: 4px 10px;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="view-container">
+            <div class="circle">MK</div>
+            <div class="admin-title">Admin Details</div>
+            <button class="view-button" onclick="toggleAdmin(event)">View</button>
+        </div>
+        <h1>M.K.Lyrics</h1>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-icon" onclick="toggleMenu(event)">☰</div>
+        <div class="menu-dropdown" id="menu">
+            <a href="#" id="loginLink">Login</a>
+            <a href="#">Help</a>
+            <a href="#">Contuct Admin</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <label for="song">Enter Your Mobile Number:</label>
+        <input type="text" id="song" placeholder="Mobile Number/EMail:">
+
+        <label for="name">Enter Your Password:</label>
+        <input type="password" id="name" placeholder="Password">
+
+        <button onclick="window.location.href='gallery.html'">Submit</button>
+
+        <div class="insta-link">
+            <a href="https://www.instagram.com/m.k_lyrics.soul?igsh=MTlxaHlkNHVqZzRrcw==" target="_blank">Follow on Instagram</a> |  
+            <a href="https://www.instagram.com/m.k_lyrics.soul?igsh=MTlxaHlkNHVqZzRrcw==" target="_blank">m.k_lyrics.soul</a>
+        </div>
+    </div>
+
+    <div class="admin-section" id="adminDetails">
+        <p>👤 <strong>Admin Name:</strong> Manikandan</p>
+        <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/m.k_lyrics.soul?igsh=MTlxaHlkNHVqZzRrcw==" target="_blank">@m.k_lyrics.soul</a></p>
+        <p>📷 <strong>Personal ID:</strong> @_alone_rider_mani</p>
+        <p>🏡 <strong>Village:</strong> Panruti</p>
+        <p>📞 <strong>Contact:</strong> 8667737474</p>
+        <p>📌 <strong>Description:</strong><br>உங்களுக்கு பிடித்த பாடல்கள் கூறவும்,<br>இலவசமாக Lyrics Songs 💝 Editing செய்து தரப்படும்.</p>
+    </div>
+
+    <script>
+        function toggleMenu(event) {
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+            event.stopPropagation();
+        }
+
+        document.getElementById("loginLink").addEventListener("click", function (event) {
+            event.preventDefault();
+            window.location.href = "details.html";
+        });
+
+        document.addEventListener("click", function(event) {
+            var menu = document.getElementById("menu");
+            var adminDetails = document.getElementById("adminDetails");
+            var menuIcon = document.querySelector(".menu-icon");
+            var viewButton = document.querySelector(".view-button");
+
+            if (event.target !== menu && event.target !== menuIcon) {
+                menu.style.display = "none";
+            }
+
+            if (event.target !== adminDetails && event.target !== viewButton) {
+                adminDetails.style.display = "none";
+            }
+        });
+
+        function toggleAdmin(event) {
+            var adminDetails = document.getElementById("adminDetails");
+            adminDetails.style.display = adminDetails.style.display === "block" ? "none" : "block";
+            event.stopPropagation();
+        }
+    </script>
+
+</body>
+</html>

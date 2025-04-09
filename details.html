@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details Page</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-image: url('images/m.k.wallpaper-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: brightness(60%);
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 30px;
+      position: relative;
+    }
+    .circle {
+      width: 50px;
+      height: 50px;
+      background-color: rgb(235, 215, 82);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      animation: pulse 1.5s infinite;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    h1 {
+      color: #ff007f;
+      margin-top: 70px;
+      font-family: 'Butterfly', cursive;
+    }
+    .container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    label {
+      color: rgb(228, 10, 181);
+      font-size: 16px;
+    }
+    input {
+      width: 200px;
+      padding: 8px;
+      font-size: 14px;
+    }
+    .message {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .error {
+      color: red;
+    }
+    .success {
+      color: greenyellow;
+    }
+    button {
+      margin-top: 10px;
+      background-color: rgb(57, 5, 225);
+      color: white;
+      padding: 6px 12px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+    .insta-link {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .insta-link a {
+      color: #074a20;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle">MK</div>
+  <h1>M.K.Lyrics</h1>  <div class="container">
+    <label for="mobile">Enter Your Mobile Number:</label>
+    <input type="number" id="mobile" placeholder="Mobile Number" inputmode="numeric"><label for="password">Create Your Password:</label>
+<input type="password" id="password" placeholder="Create Password">
+
+<div id="validationMsg" class="message"></div>
+
+<button onclick="validatePassword()">Create</button>
+
+<button onclick="goBack()">Back</button>
+
+<div class="insta-link">
+  <a href="https://www.instagram.com/m.k_lyrics.soul?igsh=MTlxaHlkNHVqZzRrcw==" target="_blank">Follow on Instagram</a> |
+  <a href="https://www.instagram.com/m.k_lyrics.soul?igsh=MTlxaHlkNHVqZzRrcw==" target="_blank">m.k_lyrics.soul</a>
+</div>
+
+  </div>  <script>
+    function validatePassword() {
+      const password = document.getElementById("password").value;
+      const msg = document.getElementById("validationMsg");
+
+      const capital = /[A-Z]/;
+      const small = /[a-z]/;
+      const number = /[0-9]/;
+      const symbol = /[@#$%^&*!]/;
+
+      if (!capital.test(password) || !small.test(password) || !number.test(password) || !symbol.test(password)) {
+        msg.textContent = "Use capital, small, number & symbol in password";
+        msg.className = "message error";
+      } else {
+        msg.textContent = "Your password successfully created";
+        msg.className = "message success";
+      }
+    }
+
+    function goBack() {
+      window.location.href = "my app.html";
+    }
+  </script></body>
+</html>

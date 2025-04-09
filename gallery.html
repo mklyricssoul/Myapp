@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M.K Gallery</title>
+  <style>
+    body {
+      background-image: url('images/m.k.wallpaper-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: brightness(0.9);
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .circle {
+      width: 50px;
+      height: 50px;
+      background-color: green;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      animation: pulse 1.5s infinite;
+      position: absolute;
+      left: 10px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      color: #ff007f;
+      font-family: 'Butterfly', cursive;
+    }
+
+    .menu-container {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+    }
+
+    .menu-icon {
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    .menu-dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+      box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+      width: 180px;
+      z-index: 10;
+      padding: 5px 0;
+    }
+
+    .menu-dropdown a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: black;
+      font-size: 15px;
+      font-weight: 500;
+      border-bottom: 1px solid #eee;
+    }
+
+    .menu-dropdown a:hover {
+      background-color: rgb(251, 221, 70);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      padding: 90px 20px 20px;
+    }
+
+    .grid-item img,
+    .grid-item video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .grid-item img:hover,
+    .grid-item video:hover {
+      transform: scale(1.05);
+    }
+
+    .insta-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .insta-link a {
+      color: #ee0008;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="circle">MK</div>
+    <h1>M.K.Lyrics</h1>
+    <div class="menu-container">
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <div class="menu-dropdown" id="menu">
+        <a href="my app.html">Home</a>
+        <a href="#">Help</a>
+        <a href="#">Contact</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <!-- Replace your media links below -->
+    <div class="grid-item"><a href="images/id card.jpg" target="_blank"><img src="images/pic1.jpg" alt="Pic 1"></a></div>
+    <div class="grid-item"><a href="images/pic2.jpg" target="_blank"><img src="images/pic2.jpg" alt="Pic 2"></a></div>
+    <div class="grid-item"><a href="videos/vid1.mp4" target="_blank"><video src="videos/vid1.mp4" controls muted></video></a></div>
+    <div class="grid-item"><a href="videos/vid2.mp4" target="_blank"><video src="videos/vid2.mp4" controls muted></video></a></div>
+    <!-- Add more images/videos like above -->
+  </div>
+
+  <div class="insta-link">
+    <a href="https://www.instagram.com/m.k_lyrics.soul?igsh=MTlxaHlkNHVqZzRrcw==" target="_blank">Follow on Instagram</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    document.addEventListener("click", function(event) {
+      var menu = document.getElementById("menu");
+      var menuIcon = document.querySelector(".menu-icon");
+
+      if (event.target !== menu && event.target !== menuIcon) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
